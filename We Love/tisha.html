@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Tisha ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Georgia', serif;
+            color: #f8e1e7;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            margin-top: 80px;
+            padding: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #ffb6c1;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.3em;
+            width: 75%;
+            margin: auto;
+            line-height: 1.8em;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 40px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background: white;
+            color: #ff4d6d;
+        }
+
+        #secret, #proposalResponse, #firstLove, #songSection {
+            margin-top: 40px;
+            font-size: 1.4em;
+            display: none;
+            color: #ffd1dc;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 20px;
+            color: #ff4d6d;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-110vh); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Tisha ❤️</h1>
+    <h2>From your Love Smile</h2>
+
+    <p>
+      A year and a quarter ago, in a gym full of noise and movement,  
+my heart quietly chose you.  
+
+Since that day, we’ve grown stronger — not just in our bodies,  
+but in our dreams, our patience, and our love.  
+I love that we do life together — the workouts, the laughs,  
+the fights whole day and come back to each other at night, I feel I won whenever you win in words and this is what i'm missing now. I'm missing al the things we do IYKYK, that somehow mean everything.  
+
+I know sometimes I tell you to choose what’s right,  
+not because I want to control you,  
+but because I see your potential so clearly.  
+I see the future you deserve.  
+And I want the best for you… and for us.  
+
+Loving you isn’t about changing you.  
+It’s about protecting what we’re building.  
+You are my partner, my peace, my motivation —  
+and every day with you feels like progress.  
+
+Forever isn’t just a word to me, Tisha.  
+It’s a goal. And I want to try every fuckin way to reach it with you.
+
+    </p>
+
+    <button onclick="showSecret()">Click here, my love ❤️</button>
+
+    <div id="secret">
+        I don’t want just moments with you…  
+        I want forever.  
+        I want late night talks, quiet hugs, sleep by you every night with such love, shared dreams,  
+        and a lifetime of choosing each other.
+
+        <br><br>
+        <button onclick="showProposal()">Will you be mine forever? 💍</button>
+    </div>
+
+    <div id="proposalResponse">
+        No matter what your answer is…  
+        my heart already chose you.  
+        Forever yours,  
+        — Smile ❤️
+        <br><br>
+        <button onclick="showFirstLove()">First thing we loved 🫶🏼</button>
+    </div>
+
+    <!-- First Love Section -->
+    <div id="firstLove">
+        <p>
+            Remember the first thing we loved doing together?  
+            All our laughs, workouts, and silly little challenges…  
+            That’s when I knew — life with you is my favorite story.
+        </p>
+        <button onclick="showSong()">Play our song 🎵</button>
+    </div>
+
+    <!-- Hidden Song Section -->
+    <div id="songSection">
+        <p style="font-style: italic;">
+            Every lyric feels like it was written about us.
+        </p>
+        <audio id="loveSong" autoplay>
+            <source src="love.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+</div>
+
+<script>
+    function showSecret() {
+        document.getElementById("secret").style.display = "block";
+    }
+
+    function showProposal() {
+        document.getElementById("proposalResponse").style.display = "block";
+    }
+
+    function showFirstLove() {
+        document.getElementById("firstLove").style.display = "block";
+    }
+
+    function showSong() {
+        const section = document.getElementById("songSection");
+        section.style.display = "block";
+
+        const song = document.getElementById("loveSong");
+        song.play().catch(() => {
+            alert("Tap anywhere to start the song.");
+        });
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 10 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
